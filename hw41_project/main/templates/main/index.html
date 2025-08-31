@@ -1,0 +1,24 @@
+<!DOCTYPE html>
+<html lang="ru">
+<head>
+    <meta charset="UTF-8">
+    <title>Домашка 41</title>
+</head>
+<body>
+    <h2>Отправка данных</h2>
+    <form method="post">
+        {% csrf_token %}
+        <input type="text" name="message" placeholder="Введите сообщение">
+        <button type="submit">Отправить</button>
+    </form>
+
+    <h3>Уведомления:</h3>
+    {% if messages %}
+        <ul>
+            {% for message in messages %}
+                <li style="color: green;">{{ message }}</li>
+            {% endfor %}
+        </ul>
+    {% endif %}
+</body>
+</html>
