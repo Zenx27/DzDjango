@@ -1,0 +1,8 @@
+{% extends 'tasks/base.html' %}
+{% block content %}
+<h2>{{ task.title }}</h2>
+<p>{{ task.description }}</p>
+<p><strong>Статус:</strong> {{ task.completed|yesno:"Выполнена,Не выполнена" }}</p>
+<a href="{% url 'task_update' task.pk %}" class="btn btn-warning">Редактировать</a>
+<a href="{% url 'task_delete' task.pk %}" class="btn btn-danger">Удалить</a>
+{% endblock %}
